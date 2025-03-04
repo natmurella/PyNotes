@@ -4,4 +4,4 @@
 
 ## Algorithms
 ### Searching & Sorting
-- [Two Pointers](Searching_&_Sorting/Two_Pointers.md)
+- [Two Pointers](Algorithms/Searching_&_Sorting/Two_Pointers.md)
