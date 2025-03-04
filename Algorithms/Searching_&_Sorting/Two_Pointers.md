@@ -1,4 +1,4 @@
-[⬅ Back to Main Page](../README.md)
+[⬅ Back to Main Page](../../README.md)
 # Reverse Postions in a list
 ```python
 def reverse_specific_characters(s: str) -> str:
