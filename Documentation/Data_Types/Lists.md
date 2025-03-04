@@ -81,6 +81,7 @@ Removesthe first element that matches from the list.
 
 ```python
 list.reverse()
+reversed_list = list[::-1]
 ```
 reverses the order of elements, in place.
 
