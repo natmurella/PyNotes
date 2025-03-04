@@ -53,6 +53,30 @@ Example:
 ```
 
 [🔼](#lists-documentation)
+### Insert
+
+```python
+list.insert(pos, element)
+list[pos] = element
+```
+
+[🔼](#lists-documentation)
+### Pop
+
+```python
+list.pop(pos)
+```
+Removes the element at the specific position.
+
+[🔼](#lists-documentation)
+### Remove
+
+```python
+list.remove(element)
+```
+Removesthe first element that matches from the list.
+
+[🔼](#lists-documentation)
 ### Reverse
 
 ```python
