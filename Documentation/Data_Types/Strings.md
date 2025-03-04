@@ -88,6 +88,15 @@ string.split(separator: str = " ", maxplit: int = -1)
 ```
 Splits the string into a list of strings, splitting int the spearator (removing it).
 
+Note: consecutive separators do not create empty string elements.
+
+Example:
+```python
+>>> s = " a b     c "
+>>> s.strip()
+["a", "b", "c"]
+```
+
 [🔼](#strings-documentation)
 ## Common Usages
 
