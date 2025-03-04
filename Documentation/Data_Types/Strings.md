@@ -81,7 +81,7 @@ Conversions:
 ```
 
 [🔼](#strings-documentation)
-### Format
+### Split
 
 ```python
 string.split(separator: str = " ", maxplit: int = -1)
