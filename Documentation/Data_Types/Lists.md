@@ -64,9 +64,9 @@ list[pos] = element
 ### Pop
 
 ```python
-list.pop(pos)
+elemt = list.pop(pos)
 ```
-Removes the element at the specific position.
+Removes the element at the specific position. returns the popped element.
 
 [🔼](#lists-documentation)
 ### Remove
