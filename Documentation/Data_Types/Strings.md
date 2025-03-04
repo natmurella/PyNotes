@@ -4,13 +4,16 @@
 - [Methods](#methods)
   - [Find](#find)
   - [Format](#format)
-- [Common Usage](#common-usages)
+  - [Split](#split)
+- [Common Usages](#common-usages)
   - [String to List](#string-to-list)
 
 [🔼](#strings-documentation)
 ## Methods
+
 [🔼](#strings-documentation)
 ### Find
+
 ```python
 "str".find(substring: str, start: int = None, end: int = None)
 ```
@@ -27,8 +30,10 @@ Examples
 >>> "hello".find("ell", 3, 4)
 -1
 ```
+
 [🔼](#strings-documentation)
 ### Format
+
 ```python
 "{}".format(*args, **kwargs)
 f"{variable}"
@@ -75,11 +80,20 @@ Conversions:
 "1.23e+03"
 ```
 
+[🔼](#strings-documentation)
+### Format
+
+```python
+string.split(separator: str = " ", maxplit: int = -1)
+```
+Splits the string into a list of strings, splitting int the spearator (removing it).
 
 [🔼](#strings-documentation)
 ## Common Usages
+
 [🔼](#strings-documentation)
 ### String to List and Back
+
 ```python
 letters = list(word)
 word = "".join(letters)
