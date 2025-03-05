@@ -8,6 +8,8 @@
     - [Repeat](#repeat)
   - [Terminating Iterators](#terminating-iterators)
     - [Accumulate](#accumulate)
+    - [Batched](#batched)
+    - [Chain](#chain)
   - [Combinatoric Iterators](#combinatoric-iterators)
     - [Product](#product)
 - [Iterator Usage](#iterator-usage)
@@ -113,6 +115,34 @@ Examples
 >>> def fib(x, y): return x + y
 >>> list(accumulate([0, 1, 2, 3], fib))
 [0, 1, 3, 6]
+```
+
+[🔼](#itertools-documentation)
+#### Batched
+
+```python
+iterator = itertools.batched(iterable, n, strict=false)
+```
+
+Batch data from the iterable into tuples of length n. The last batch may be shorter than n. if strict True, error if batch shorter.
+
+```python
+>>> batched("abcdef", 2)
+[(a, b), (c, d), (e, f)]
+```
+
+[🔼](#itertools-documentation)
+#### Chain
+
+```python
+iterator = itertools.chain(*iterables)
+```
+
+Make an iterator that returns elements from the first iterable until it is exhausted, then proceeds to the next iterable, until all of the iterables are exhausted.\
+
+```python
+>>> chain('ABC', 'DEF')
+[A, B, C, D, E, F]
 ```
 
 [🔼](#itertools-documentation)
