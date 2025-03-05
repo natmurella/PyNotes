@@ -9,6 +9,7 @@
 ### Libraries
 - [Itertools](Documentation/Libraries/Itertools.md)
 - [Functools](Documentation/Libraries/Functools.md)
+- [Collections](Documentation/Libraries/Collections.md)
 - [Numpy](Documentation/Libraries/Numpy.md)
 ## Algorithms
 ### Searching & Sorting
