@@ -4,6 +4,7 @@
 - [Methods](#methods)
   - [Infinite Iterators](#infinite-iterators)
     - [Count](#count)
+    - [Cycle](#cycle)
   - [Terminating Iterators](#terminating-iterators)
     - [Accumulate](#accumulate)
   - [Combinatoric Iterators](#combinatoric-iterators)
@@ -46,6 +47,36 @@ Example:
 3.0
 ...
 ```
+
+[🔼](#itertools-documentation)
+#### Cycle
+
+```python
+iterator = itertools.cycle(iterable)
+```
+
+When the iterable is exhausted, return elements from the saved copy. Repeats indefinitely.
+
+```python
+>>> cycle('AB')
+[A, B, A, B, ...]
+```
+
+[🔼](#itertools-documentation)
+#### Repeat
+
+```python
+iterator = itertools.repeat(object, times=None)
+```
+Makes an iterator that returns the same object infinite times, unless set.
+
+```python
+>>> repeat(2)
+[2, 2, 2, ...]
+>>> repeat(3, 3)
+[3, 3, 3]
+```
+
 
 [🔼](#itertools-documentation)
 ### Terminating Iterators
