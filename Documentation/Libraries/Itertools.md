@@ -111,4 +111,96 @@ Example:
 ## Iterator Usage
 
 [🔼](#itertools-documentation)
+#### Next
+
+```python
+>>> itr = iter([10, 20, 30])
+>>> next(itr)
+10
+>>> next itr
+20
+```
+
+[🔼](#itertools-documentation)
+#### For Loop
+
+```python
+my_iterator = iter(range(5))
+
+for number in my_iterator:
+    print(number)
+```
+```python
+0
+1
+2
+3
+4
+```
+
+[🔼](#itertools-documentation)
+#### List
+
+```python
+>>> my_iterator = iter(range(5))
+>>> numbers_list = list(my_iterator)
+[0, 1, 2, 3, 4]
+```
+
+[🔼](#itertools-documentation)
+#### Zip
+
+```python
+iterator = zip(*iterator)
+```
+The zip() function returns a zip object, which is an iterator of tuples where the first item in each passed iterator is paired together, and then the second item in each passed iterator are paired together etc.
+If the passed iterables have different lengths, the iterable with the least items decides the length of the new iterator.
+
+```python
+>>> numbers = iter([1, 2, 3])
+>>> letters = iter(['a', 'b', 'c'])
+>>> zip(numbers, letters)
+[(1, a), (2, b), (3, c)]
+```
+
+[🔼](#itertools-documentation)
+#### Map
+
+```python
+iterator = map(function, *iterator)
+```
+
+The map() function executes a specified function for each item in an iterable. The item is sent to the function as a parameter.
+Make sure the function has a parameter for each iterator.
+
+```python
+>>> m = map(lambda x,y: x+y, (a, b), (c, d))
+>>> list(m)
+[ac, bd]
+```
+
+[🔼](#itertools-documentation)
+#### Built-In Functions
+
+Many built-in functions expect iterables, so you can use iterators with them as well.
+
+```python
+>>> itr = iter([1, 2, 3, 4])
+>>> sum(itr)
+10
+>>> max(itr)
+4
+>>> min(itr)
+1
+```
+```python
+>>> b = iter([True, True, False])
+>>> any(b)
+True
+>>> all(b)
+False
+```
+
+
+[🔼](#itertools-documentation)
 ## Common Usages
