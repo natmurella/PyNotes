@@ -9,6 +9,9 @@ Higher-order functions and operations on callable objects
   - [Total Ordering](#total-ordering)
 - [Methods](#methods)
   - [Cmp To Key](#cmp-to-key)
+  - [Partial](#partial)
+  - [Partialmethod](#partialmethod)
+  - [Reduce](#reduce)
 
 [🔼](#functools-documentation)
 ## Decorators
@@ -183,4 +186,72 @@ A key function is a callable that accepts one argument and returns another value
 sorted(iterable, key=cmp_to_key(locale.strcoll))  # locale-aware sort order
 ```
 
+[🔼](#functools-documentation)
+## Partial
 
+```python
+functools.partial(func, /, *args, **keywords)
+```
+
+The partial() is used for partial function application which “freezes” some portion of a function’s arguments and/or keywords resulting in a new object with a simplified signature. 
+For example, partial() can be used to create a callable that behaves like the int() function where the base argument defaults to two:
+
+```python
+>>> from functools import partial
+>>> basetwo = partial(int, base=2)
+>>> basetwo.__doc__ = 'Convert base 2 string to an int.'
+>>> basetwo('10010')
+18
+```
+
+[🔼](#functools-documentation)
+## Partialmethod
+
+```python
+class functools.partialmethod(func, /, *args, **keywords)
+```
+
+Return a new partialmethod descriptor which behaves like partial except that it is designed to be used as a method definition rather than being directly callable.
+
+func must be a descriptor or a callable (objects which are both, like normal functions, are handled as descriptors).
+
+When func is a descriptor (such as a normal Python function, classmethod(), staticmethod(), abstractmethod() or another instance of partialmethod), 
+calls to __get__ are delegated to the underlying descriptor, and an appropriate partial object returned as the result.
+
+When func is a non-descriptor callable, an appropriate bound method is created dynamically. This behaves like a normal Python function when used as a method: 
+the self argument will be inserted as the first positional argument, even before the args and keywords supplied to the partialmethod constructor.
+
+```python
+class Cell:
+    def __init__(self):
+        self._alive = False
+    @property
+    def alive(self):
+        return self._alive
+    def set_state(self, state):
+        self._alive = bool(state)
+    set_alive = partialmethod(set_state, True)
+    set_dead = partialmethod(set_state, False)
+
+c = Cell()
+c.alive
+False
+c.set_alive()
+c.alive
+True
+```
+
+[🔼](#functools-documentation)
+## Reduce
+
+```python
+functools.reduce(function, iterable, [initial, ]/)
+```
+
+Apply function of two arguments cumulatively to the items of iterable, from left to right, so as to reduce the iterable to a single value. 
+For example, reduce(lambda x, y: x+y, [1, 2, 3, 4, 5]) calculates ((((1+2)+3)+4)+5). 
+The left argument, x, is the accumulated value and the right argument, y, is the update value from the iterable. 
+If the optional initial is present, it is placed before the items of the iterable in the calculation, and serves as a default when the iterable is empty. 
+If initial is not given and iterable contains only one item, the first item is returned.
+
+As opposed to accumulate() will only return the single final value. use when you only care about the final value. Use accumulate() when you care about the intermediate values.
