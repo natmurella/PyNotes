@@ -5,6 +5,7 @@
   - [Infinite Iterators](#infinite-iterators)
     - [Count](#count)
     - [Cycle](#cycle)
+    - [Repeat](#repeat)
   - [Terminating Iterators](#terminating-iterators)
     - [Accumulate](#accumulate)
   - [Combinatoric Iterators](#combinatoric-iterators)
