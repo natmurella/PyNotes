@@ -2,14 +2,56 @@
 # Itertools Documentation
 ## Contents
 - [Methods](#methods)
-  - [Accumulate](#accumulate)
+  - [Infinite Iterators](#infinite-iterators)
+    - [Count](#count)
+  - [Terminating Iterators](#terminating-iterators)
+    - [Accumulate](#accumulate)
+  - [Combinatoric Iterators](#combinatoric-iterators)
+    - [Product](#product)
+- [Iterator Usage](#iterator-usage)
+  - [Next](#next)
+  - [For Loop](#for-loop)
+  - [List](#list)
+  - [Zip](#zip)
+  - [Map](#map)
+  - [Build-In Functions](#build-in-functions)
 - [Common Usages](#common-usages)
 
 [🔼](#itertools-documentation)
 ## Methods
 
 [🔼](#itertools-documentation)
-### Accumulate
+### Infinite Iterators
+
+[🔼](#itertools-documentation)
+#### Count
+
+```python
+iterator = itertools.count(start = 0, step = 1)
+```
+make an iterator that generates evenly spaced values (separated by step) beginning with start.
+
+Example:
+```python
+>>> for i in itertools.count()
+0
+1
+2
+...
+```
+```python
+>>> for i in itertools.count(2, 0.5)
+2.0
+2.5
+3.0
+...
+```
+
+[🔼](#itertools-documentation)
+### Terminating Iterators
+
+[🔼](#itertools-documentation)
+#### Accumulate
 
 ```python
 iterator = itertools.accumulate(iterable, func = sum, initial = None)
@@ -40,6 +82,33 @@ Examples
 >>> list(accumulate([0, 1, 2, 3], fib))
 [0, 1, 3, 6]
 ```
+
+[🔼](#itertools-documentation)
+### Combinatoric Iterators
+
+[🔼](#itertools-documentation)
+#### Product
+
+```python
+iterator = itertools.product(*iterables, repeat=1)
+```
+Cartesian product of the iterables. Roughly equivalent to nested for-loops in a generator expression. 
+For example, product(A, B) returns the same as ((x,y) for x in A for y in B).
+The Repeat meant taking the iterables with themselves n times (default 1)
+
+Example:
+```python
+>>> product("AB", "xy")
+[(A,x), (A,y), (B,x), (B,y)]
+>>> product([1, 2], repeat=2)
+[(1, 1), (1, 2), (2, 1), (2, 2)]
+>>> product([1, 2, 3], repeat=3)
+[(1, 1, 1), (1, 1, 2), (1, 2, 1), (1, 2, 2), (2, 1, 1), (2, 1, 2), (2, 2, 1), (2, 2, 2)]
+```
+
+
+[🔼](#itertools-documentation)
+## Iterator Usage
 
 [🔼](#itertools-documentation)
 ## Common Usages
