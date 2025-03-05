@@ -6,6 +6,7 @@
 - [Lists](Documentation/Data_Types/Lists.md)
 ### Libraries
 - [Itertools](Documentation/Libraries/Itertools.md)
+- [Functools](Documentation/Libraries/Functools.md)
 - [Numpy](Documentation/Libraries/Numpy.md)
 ## Algorithms
 ### Searching & Sorting
