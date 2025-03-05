@@ -4,6 +4,7 @@
 ### Data Types
 - [Strings](Documentation/Data_Types/Strings.md)
 - [Lists](Documentation/Data_Types/Lists.md)
+- [Sets](Documentation/Data_Types/Sets.md)
 ### Libraries
 - [Itertools](Documentation/Libraries/Itertools.md)
 - [Functools](Documentation/Libraries/Functools.md)
