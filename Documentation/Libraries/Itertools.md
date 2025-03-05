@@ -14,7 +14,7 @@
   - [List](#list)
   - [Zip](#zip)
   - [Map](#map)
-  - [Build-In Functions](#build-in-functions)
+  - [Built-In Functions](#built-in-functions)
 - [Common Usages](#common-usages)
 
 [🔼](#itertools-documentation)
