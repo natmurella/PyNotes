@@ -3,5 +3,5 @@
 ## Contents
 - [Methods](#methods)
 
-[🔼](#lists-documentation)
+[🔼](#collections-documentation)
 ## Methods
