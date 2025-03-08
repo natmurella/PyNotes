@@ -11,7 +11,7 @@
 - [Functools](Documentation/Libraries/Functools.md)
 - [Collections](Documentation/Libraries/Collections.md)
 - [Heapq](Documentation/Libraries/Heapq.md)
-- [Numpy](Documentation/Libraries/Numpy.md)
+- [Math](Documentation/Libraries/Math.md)
 ## Algorithms
 https://roadmap.sh/computer-science
 ### Searching & Sorting
