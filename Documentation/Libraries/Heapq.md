@@ -1,5 +1,6 @@
-[⬅](../../README.md)
 # Heapq Documentation
+[⬅](../../README.md)
+
 ## Contents
 - [Details](#details)
   - [Heap Description](#heap-description)
