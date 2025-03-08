@@ -1,5 +1,6 @@
 # Itertools Documentation
 [⬅](../../README.md)
+
 Functions creating iterators for efficient looping
 ## Contents
 - [Methods](#methods)
