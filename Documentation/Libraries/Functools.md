@@ -1,5 +1,6 @@
-[⬅](../../README.md)
 # Functools Documentation
+[⬅](../../README.md)
+
 Higher-order functions and operations on callable objects
 ## Contents
 - [Decorators](#decorators)
