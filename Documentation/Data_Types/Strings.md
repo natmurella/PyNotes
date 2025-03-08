@@ -1,5 +1,6 @@
-[⬅](../../README.md)
 # Strings Documentation
+[⬅](../../README.md)
+
 ## Contents
 - [Methods](#methods)
   - [Find](#find)
