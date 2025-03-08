@@ -3,21 +3,21 @@
 Higher-order functions and operations on callable objects
 ## Contents
 - [Decorators](#decorators)
-  - [Cache](#cache)
-  - [Cached Property](#cached-property)
-  - [Lru Cache](#lru-cache)
-  - [Total Ordering](#total-ordering)
+  - [cache](#cache)
+  - [cached_property](#cached-property)
+  - [lru_cache](#lru-cache)
+  - [total_ordering](#total-ordering)
 - [Methods](#methods)
-  - [Cmp To Key](#cmp-to-key)
-  - [Partial](#partial)
-  - [Partialmethod](#partialmethod)
-  - [Reduce](#reduce)
+  - [cmp_to_key](#cmp-to-key)
+  - [partial](#partial)
+  - [partialmethod](#partialmethod)
+  - [reduce](#reduce)
 
 [🔼](#functools-documentation)
 ## Decorators
 
 [🔼](#functools-documentation)
-### Cache
+### cache
 
 ```python
 @functools.cache(user_function)
@@ -41,7 +41,7 @@ def factorial(n):
 ```
 
 [🔼](#functools-documentation)
-### Cached Property
+### pached property
 
 ```python
 @functools.cached_property(func)
@@ -62,7 +62,7 @@ class DataSet:
 ```
 
 [🔼](#functools-documentation)
-## Lru Cache
+## lru cache
 
 ```python
 @functools.lru_cache(user_function)
@@ -136,7 +136,7 @@ CacheInfo(hits=28, misses=16, maxsize=None, currsize=16)
 ```
 
 [🔼](#functools-documentation)
-## Total Ordering
+## total ordering
 
 ```python
 @functools.total_ordering
@@ -169,7 +169,7 @@ class Student:
 ## Methods
 
 [🔼](#functools-documentation)
-## Cmp to Key
+## cmp to key
 
 ```python
 functools.cmp_to_key(func)
@@ -187,7 +187,7 @@ sorted(iterable, key=cmp_to_key(locale.strcoll))  # locale-aware sort order
 ```
 
 [🔼](#functools-documentation)
-## Partial
+## partial
 
 ```python
 functools.partial(func, /, *args, **keywords)
@@ -205,7 +205,7 @@ For example, partial() can be used to create a callable that behaves like the in
 ```
 
 [🔼](#functools-documentation)
-## Partialmethod
+## partialmethod
 
 ```python
 class functools.partialmethod(func, /, *args, **keywords)
@@ -242,7 +242,7 @@ True
 ```
 
 [🔼](#functools-documentation)
-## Reduce
+## reduce
 
 ```python
 functools.reduce(function, iterable, [initial, ]/)
