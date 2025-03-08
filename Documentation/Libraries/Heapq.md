@@ -5,8 +5,14 @@
   - [Heap Description](#heap-description)
   - [Python Heap Documentation](#python-heap-documentation)
 - [Methods](#methods)
-  - [Heappush](#heappush)
-  - 
+  - [heappush](#heappush)
+  - [heappop](#heappop)
+  - [heappushpop](#heappushpop)
+  - [heapify](#heapify)
+  - [heapreplace](#heapreplace)
+  - [merge](#merge)
+  - [nlargest](#nlargest)
+  - [nsmallest](#nsmallest)
 
 [🔼](#Heapq-documentation)
 ## Details
@@ -56,10 +62,188 @@ heap[0] is the smallest item, and heap.sort() maintains the heap invariant!
 ## Methods
 
 [🔼](#Heapq-documentation)
-### Heappush
+### heappush
 
 ```python
 heapq.heappush(heap, item)
 ```
 Push the value item onto the heap, maintaining the heap invariant.
+
+```python
+>>> heap = [1, 3, 5, 7, 9]
+>>> heapq.heappush(heap, 0)
+>>> heap
+[0, 3, 1, 7, 9, 5]
+>>> heapq.heappush(heap, 2)
+>>> heap
+[0, 3, 1, 7, 9, 5, 2]
+>>> heapq.heappush(heap, 8)
+>>> heap
+[0, 3, 1, 7, 9, 5, 2, 8]
+>>> heapq.heappush(heap, 12)
+>>> heap
+[0, 3, 1, 7, 9, 5, 2, 8, 12]
+```
+
+[🔼](#Heapq-documentation)
+### heappop
+
+```python
+heapq.heappop(heap)
+```
+
+Pop and return the smallest item from the heap, maintaining the heap invariant. 
+If the heap is empty, IndexError is raised. To access the smallest item without popping it, use heap[0].
+
+```python
+>>> heap = [1, 3, 5, 7, 9]
+>>> heapq.heappop(heap)
+1
+>>> heap
+[3, 5, 7, 9]
+>>> heapq.heappop(heap)
+3
+>>> heap
+[5, 7, 9]
+>>> heapq.heappop(heap)
+5
+>>> heap
+[7, 9]
+```
+
+[🔼](#Heapq-documentation)
+### heappushpop
+
+```python
+heapq.heappushpop(heap, item)
+```
+
+Push item on the heap, then pop and return the smallest item from the heap. 
+The combined action runs more efficiently than heappush() followed by a separate call to heappop().
+
+```python
+>>> heap = [1, 3, 5, 7, 9]
+>>> heapq.heappushpop(heap, 2)
+1
+>>> heap
+[2, 3, 5, 7, 9]
+>>> heapq.heappushpop(heap, 4)
+2
+>>> heap
+[3, 4, 5, 7, 9]
+>>> heapq.heappushpop(heap, 6)
+3
+>>> heap
+[4, 6, 5, 7, 9]
+```
+
+[🔼](#Heapq-documentation)
+### heapify
+
+```python
+heapq.heapify(x)
+```
+
+Transform list x into a heap, in-place, in linear time.
+
+```python
+>>> lst = [5, 3, 8, 1, 2]
+>>> heapq.heapify(lst)
+>>> lst
+[1, 2, 8, 5, 3]
+```
+
+[🔼](#Heapq-documentation)
+### heapreplace
+
+```python
+heapq.heapreplace(heap, item)
+```
+
+Pop and return the smallest item from the heap, and also push the new item. The heap size doesn’t change. If the heap is empty, IndexError is raised.
+
+This one step operation is more efficient than a heappop() followed by heappush() and can be more appropriate when using a fixed-size heap. 
+The pop/push combination always returns an element from the heap and replaces it with item.
+
+The value returned may be larger than the item added. If that isn’t desired, consider using heappushpop() instead. Its push/pop combination returns the smaller of the two values, leaving the larger value on the heap.
+
+```python
+>>> heap = [1, 3, 5, 7, 9]
+>>> heapq.heapreplace(heap, 10)
+1
+>>> heap
+[3, 7, 5, 10, 9]
+>>> heapq.heapreplace(heap, 0)
+3
+>>> heap
+[0, 7, 5, 10, 9]
+>>> heapq.heapreplace(heap, 4)
+0
+>>> heap
+[4, 7, 5, 10, 9]
+```
+
+[🔼](#Heapq-documentation)
+### merge
+
+```python
+iterator = heapq.merge(*iterables, key=None, reverse=False)
+```
+
+Merge multiple sorted inputs into a single sorted output (for example, merge timestamped entries from multiple log files). Returns an iterator over the sorted values.
+
+Similar to sorted(itertools.chain(*iterables)) but returns an iterable, does not pull the data into memory all at once, and assumes that each of the input streams is already sorted (smallest to largest).
+
+Has two optional arguments which must be specified as keyword arguments.
+
+key specifies a key function of one argument that is used to extract a comparison key from each input element. The default value is None (compare the elements directly).
+
+reverse is a boolean value. If set to True, then the input elements are merged as if each comparison were reversed. To achieve behavior similar to sorted(itertools.chain(*iterables), reverse=True), all iterables must be sorted from largest to smallest.
+
+```python
+# Merge multiple sorted inputs into a single sorted output.
+>>> a = [1, 3, 5]
+>>> b = [2, 4, 6]
+>>> list(heapq.merge(a, b))
+[1, 2, 3, 4, 5, 6]
+# Example with key and reverse parameters (inputs must be pre-sorted accordingly)
+>>> a_desc = [5, 3, 1]
+>>> b_desc = [6, 4, 2]
+>>> list(heapq.merge(a_desc, b_desc, reverse=True))
+[6, 5, 4, 3, 2, 1]
+```
+
+[🔼](#Heapq-documentation)
+### nlargest
+
+```python
+list = heapq.nlargest(n, iterable, key=None)
+```
+
+Return a list with the n largest elements from the dataset defined by iterable. 
+key, if provided, specifies a function of one argument that is used to extract a comparison key from each element in iterable 
+(for example, key=str.lower). Equivalent to: sorted(iterable, key=key, reverse=True)[:n].
+
+```python
+>>> data = [1, 8, 2, 23, 7, -4, 18, 23, 42, 37, 2]
+>>> heapq.nlargest(3, data)
+[42, 37, 23]
+```
+
+[🔼](#Heapq-documentation)
+### nsmallest
+
+```python
+list = heapq.nsmallest(n, iterable, key=None)
+```
+
+Return a list with the n smallest elements from the dataset defined by iterable. 
+key, if provided, specifies a function of one argument that is used to extract a comparison key from each element in iterable 
+(for example, key=str.lower). Equivalent to: sorted(iterable, key=key)[:n].
+
+```python
+>>> data = [1, 8, 2, 23, 7, -4, 18, 23, 42, 37, 2]
+>>> heapq.nsmallest(3, data)
+[-4, 1, 2]
+```
 
