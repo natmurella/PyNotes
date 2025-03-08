@@ -1,5 +1,5 @@
-[⬅](../../README.md)
 # Collections Documentation
+[⬅](../../README.md)
 ## Contents
 - [Containers](#containers)
   - [Counter](#counter)
