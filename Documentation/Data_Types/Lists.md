@@ -1,5 +1,6 @@
-[⬅](../../README.md)
 # Lists Documentation
+[⬅](../../README.md)
+
 ## Contents
 - [Methods](#methods)
   - [Append](#append)
