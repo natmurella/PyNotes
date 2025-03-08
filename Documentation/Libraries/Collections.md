@@ -9,6 +9,22 @@
     - [Total](#total)
     - [Comparison Operations](#comparison-operations)
     - [Arithmetic Operations](#arithmetic-operations)
+  - [Deque](#deque)
+    - [Append](#append)
+    - [Appendleft](#appendleft)
+    - [Clear](#clear)
+    - [Copy](#copy)
+    - [Count](#count)
+    - [Extend](#extend)
+    - [Extendleft](#extendleft)
+    - [Index](#index)
+    - [Insert](#insert)
+    - [Pop](#pop)
+    - [Popleft](#popleft)
+    - [Remove](#remove)
+    - [Reverse](#reverse)
+    - [Rotate](#rotate)
+    - [Additional Support](#additional-support)
 
 [🔼](#collections-documentation)
 ## Methods
@@ -161,6 +177,264 @@ Counter({'a': 3})
 Counter({'b': 1})
 ```
 
+[🔼](#collections-documentation)
+### Deque
+
+```python
+class collections.deque([iterable[, maxlen]])
+```
+Returns a new deque object initialized left-to-right (using append()) with data from iterable. If iterable is not specified, the new deque is empty.
+Deques are a generalization of stacks and queues (the name is pronounced “deck” and is short for “double-ended queue”). 
+Deques support thread-safe, memory efficient appends and pops from either side of the deque with approximately the same O(1) performance in either direction.
+Though list objects support similar operations, they are optimized for fast fixed-length operations and 
+incur O(n) memory movement costs for pop(0) and insert(0, v) operations which change both the size and position of the underlying data representation.
+If maxlen is not specified or is None, deques may grow to an arbitrary length. Otherwise, the deque is bounded to the specified maximum length. 
+Once a bounded length deque is full, when new items are added, a corresponding number of items are discarded from the opposite end. 
+Bounded length deques provide functionality similar to the tail filter in Unix. 
+They are also useful for tracking transactions and other pools of data where only the most recent activity is of interest.
+
+[🔼](#collections-documentation)
+#### Append
+
+```python
+deque.append(x)
+```
+
+Add x to the right side of the deque.
+
+```python
+>>> d = deque([1, 2, 3])
+>>> d.append(4)
+>>> d
+deque([1, 2, 3, 4])
+```
+
+[🔼](#collections-documentation)
+#### Appendleft
+
+```python
+deque.appendleft(x)
+```
+
+Add x to the left side of the deque.
+
+```python
+>>> d = deque([1, 2, 3])
+>>> d.appendleft(0)
+>>> d
+deque([0, 1, 2, 3])
+```
+
+[🔼](#collections-documentation)
+#### Clear
+
+```python
+deque.clear()
+```
+
+Remove all elements from the deque leaving it with length 0.
+
+```python
+>>> d = deque([1, 2, 3])
+>>> d.clear()
+>>> d
+deque([])
+```
+
+[🔼](#collections-documentation)
+#### Copy
+
+```python
+deque.copy()
+```
+
+Create a shallow copy of the deque.
+
+```python
+>>> d = deque([1, 2, 3])
+>>> d2 = d.copy()
+>>> d2
+deque([1, 2, 3])
+```
+
+[🔼](#collections-documentation)
+#### Count
+
+```python
+deque.count()
+```
+
+Count the number of deque elements equal to x.
+
+```python
+>>> d = deque([1, 2, 3, 2, 1])
+>>> d.count(2)
+2
+```
+
+[🔼](#collections-documentation)
+#### Extend
+
+```python
+deque.extend(iterable)
+```
+
+Extend the right side of the deque by appending elements from the iterable argument.
+
+```python
+>>> d = deque([1, 2, 3])
+>>> d.extend([4, 5])
+>>> d
+deque([1, 2, 3, 4, 5])
+```
+
+[🔼](#collections-documentation)
+#### Extendleft
+
+```python
+deque.extendleft(iterable)
+```
+
+Extend the left side of the deque by appending elements from iterable. 
+Note, the series of left appends results in reversing the order of elements in the iterable argument.
+
+```python
+>>> d = deque([1, 2, 3])
+>>> d.extendleft([4, 5])
+>>> d
+deque([5, 4, 1, 2, 3,])
+```
+
+[🔼](#collections-documentation)
+#### Index
+
+```python
+idx = deque.index(x[, start[, stop]])
+```
+
+Return the position of x in the deque (at or after index start and before index stop). Returns the first match or raises ValueError if not found.
+
+```python
+>>> d = deque([1, 2, 3])
+>>> d.index(2)
+1
+```
+
+[🔼](#collections-documentation)
+#### Insert
+
+```python
+deque.insert(i, x)
+```
+
+Insert x into the deque at position i. If the insertion would cause a bounded deque to grow beyond maxlen, an IndexError is raised.
+
+```python
+>>> d = deque([1, 2, 3])
+>>> d.insert(1, 99)
+>>> d
+deque([1, 99, 3])
+```
+
+[🔼](#collections-documentation)
+#### Pop
+
+```python
+x = deque.pop()
+```
+
+Remove and return an element from the right side of the deque. If no elements are present, raises an IndexError.
+
+```python
+>>> d = deque([1, 2, 3])
+>>> d.pop()
+3
+>>> d
+deque([1, 2])
+```
+
+[🔼](#collections-documentation)
+#### Popleft
+
+```python
+x = deque.popleft()
+```
+
+Remove and return an element from the left side of the deque. If no elements are present, raises an IndexError.
+
+```python
+>>> d = deque([1, 2, 3])
+>>> d.popleft()
+3
+>>> d
+deque([2, 3])
+```
+
+[🔼](#collections-documentation)
+#### Remove
+
+```python
+deque.remove(x)
+```
+
+Remove the first occurrence of value. If not found, raises a ValueError.
+
+```python
+>>> d = deque([1, 2, 3, 2])
+>>> d.remove(2)
+>>> d
+deque([1, 3, 2])
+```
+
+[🔼](#collections-documentation)
+#### Reverse
+
+```python
+deque.reverse(x)
+```
+
+Reverse the elements of the deque in-place and then return None.
+
+```python
+>>> d = deque([1, 2, 3])
+>>> d.reverse()
+>>> d
+deque([3, 2, 1])
+```
+
+[🔼](#collections-documentation)
+#### Rotate
+
+```python
+deque.rotate(n=1)
+```
+
+Rotate the deque n steps to the right. If n is negative, rotate to the left.
+When the deque is not empty, rotating one step to the right is equivalent to d.appendleft(d.pop()), and rotating one step to the left is equivalent to d.append(d.popleft()).
+
+```python
+>>> d = deque([1, 2, 3, 4])
+>>> d.rotate(2)
+>>> d
+deque([3, 4, 1, 2])
+```
+
+[🔼](#collections-documentation)
+#### Additional Support
+
+```python
+d = deque([a, b, c])
+# 1. Iteration
+for item in d:
+# 2. Length
+len(d)
+# 3. Reversed iterator
+iterator = reversed(d)
+# 4. Membership testing
+if 12 in d:
+# 5. Subscript References (Indexed access is O(1) at both ends but O(n) in the middle.)
+d[0]
+```
 
 
 
