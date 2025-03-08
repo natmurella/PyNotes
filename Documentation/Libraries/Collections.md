@@ -39,7 +39,7 @@ A counter tool is provided to support convenient and rapid tallies.
 It is a collection where elements are stored as dictionary keys and their counts are stored as dictionary values. 
 Counts are allowed to be any integer value including zero or negative counts. The Counter class is similar to bags or multisets in other languages.
 
-Initialisaio:
+Initialisation:
 ```python
 from collections import Counter 
 # With sequence of items  
