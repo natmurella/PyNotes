@@ -3,27 +3,27 @@
 ## Contents
 - [Containers](#containers)
   - [Counter](#counter)
-    - [Elements](#elements)
-    - [Most Common](#most-common)
-    - [Subtract](#subtract)
-    - [Total](#total)
+    - [elements](#elements)
+    - [most_common](#most-common)
+    - [subtract](#subtract)
+    - [total](#total)
     - [Comparison Operations](#comparison-operations)
     - [Arithmetic Operations](#arithmetic-operations)
   - [Deque](#deque)
-    - [Append](#append)
-    - [Appendleft](#appendleft)
-    - [Clear](#clear)
-    - [Copy](#copy)
-    - [Count](#count)
-    - [Extend](#extend)
-    - [Extendleft](#extendleft)
-    - [Index](#index)
-    - [Insert](#insert)
-    - [Pop](#pop)
-    - [Popleft](#popleft)
-    - [Remove](#remove)
-    - [Reverse](#reverse)
-    - [Rotate](#rotate)
+    - [append](#append)
+    - [appendleft](#appendleft)
+    - [clear](#clear)
+    - [copy](#copy)
+    - [count](#count)
+    - [extend](#extend)
+    - [extendleft](#extendleft)
+    - [index](#index)
+    - [insert](#insert)
+    - [pop](#pop)
+    - [popleft](#popleft)
+    - [remove](#remove)
+    - [reverse](#reverse)
+    - [rotate](#rotate)
     - [Additional Support](#additional-support)
 
 [🔼](#collections-documentation)
@@ -59,7 +59,7 @@ Counter objects have a dictionary interface except that they return a zero count
 ```
 
 [🔼](#collections-documentation)
-#### Elements
+#### elements
 
 ```python
 list = counter.elements()
@@ -75,7 +75,7 @@ Elements are returned in the order first encountered. If an element’s count is
 ```
 
 [🔼](#collections-documentation)
-#### Most Common
+#### most common
 
 ```python
 list = counter.most_common([n])
@@ -91,7 +91,7 @@ Elements with equal counts are ordered in the order first encountered:
 ```
 
 [🔼](#collections-documentation)
-#### Subtract
+#### subtract
 
 ```python
 counter.subtract([iterable-or-mapping])
@@ -109,7 +109,7 @@ Counter({'a': 3, 'b': 0, 'c': -3, 'd': -6})
 ```
 
 [🔼](#collections-documentation)
-#### Total
+#### total
 
 ```python
 int = counter.total()
@@ -194,7 +194,7 @@ Bounded length deques provide functionality similar to the tail filter in Unix.
 They are also useful for tracking transactions and other pools of data where only the most recent activity is of interest.
 
 [🔼](#collections-documentation)
-#### Append
+#### append
 
 ```python
 deque.append(x)
@@ -210,7 +210,7 @@ deque([1, 2, 3, 4])
 ```
 
 [🔼](#collections-documentation)
-#### Appendleft
+#### appendleft
 
 ```python
 deque.appendleft(x)
@@ -226,7 +226,7 @@ deque([0, 1, 2, 3])
 ```
 
 [🔼](#collections-documentation)
-#### Clear
+#### clear
 
 ```python
 deque.clear()
@@ -242,7 +242,7 @@ deque([])
 ```
 
 [🔼](#collections-documentation)
-#### Copy
+#### copy
 
 ```python
 deque.copy()
@@ -258,7 +258,7 @@ deque([1, 2, 3])
 ```
 
 [🔼](#collections-documentation)
-#### Count
+#### count
 
 ```python
 deque.count()
@@ -273,7 +273,7 @@ Count the number of deque elements equal to x.
 ```
 
 [🔼](#collections-documentation)
-#### Extend
+#### extend
 
 ```python
 deque.extend(iterable)
@@ -289,7 +289,7 @@ deque([1, 2, 3, 4, 5])
 ```
 
 [🔼](#collections-documentation)
-#### Extendleft
+#### extendleft
 
 ```python
 deque.extendleft(iterable)
@@ -306,7 +306,7 @@ deque([5, 4, 1, 2, 3,])
 ```
 
 [🔼](#collections-documentation)
-#### Index
+#### index
 
 ```python
 idx = deque.index(x[, start[, stop]])
@@ -321,7 +321,7 @@ Return the position of x in the deque (at or after index start and before index 
 ```
 
 [🔼](#collections-documentation)
-#### Insert
+#### insert
 
 ```python
 deque.insert(i, x)
@@ -337,7 +337,7 @@ deque([1, 99, 3])
 ```
 
 [🔼](#collections-documentation)
-#### Pop
+#### pop
 
 ```python
 x = deque.pop()
@@ -354,7 +354,7 @@ deque([1, 2])
 ```
 
 [🔼](#collections-documentation)
-#### Popleft
+#### popleft
 
 ```python
 x = deque.popleft()
@@ -371,7 +371,7 @@ deque([2, 3])
 ```
 
 [🔼](#collections-documentation)
-#### Remove
+#### remove
 
 ```python
 deque.remove(x)
@@ -387,7 +387,7 @@ deque([1, 3, 2])
 ```
 
 [🔼](#collections-documentation)
-#### Reverse
+#### reverse
 
 ```python
 deque.reverse(x)
@@ -403,7 +403,7 @@ deque([3, 2, 1])
 ```
 
 [🔼](#collections-documentation)
-#### Rotate
+#### rotate
 
 ```python
 deque.rotate(n=1)
