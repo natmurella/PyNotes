@@ -1,7 +1,7 @@
 [⬅](../../README.md)
 # Collections Documentation
 ## Contents
-- [Containers](#methods)
+- [Containers](#containers)
   - [Counter](#counter)
     - [Elements](#elements)
     - [Most Common](#most-common)
@@ -27,7 +27,7 @@
     - [Additional Support](#additional-support)
 
 [🔼](#collections-documentation)
-## Methods
+## Containers
 
 [🔼](#collections-documentation)
 ### Counter
