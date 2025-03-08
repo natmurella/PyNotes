@@ -4,21 +4,21 @@ Functions creating iterators for efficient looping
 ## Contents
 - [Methods](#methods)
   - [Infinite Iterators](#infinite-iterators)
-    - [Count](#count)
-    - [Cycle](#cycle)
-    - [Repeat](#repeat)
+    - [count](#count)
+    - [cycle](#cycle)
+    - [repeat](#repeat)
   - [Terminating Iterators](#terminating-iterators)
-    - [Accumulate](#accumulate)
-    - [Batched](#batched)
-    - [Chain](#chain)
+    - [accumulate](#accumulate)
+    - [batched](#batched)
+    - [chain](#chain)
   - [Combinatoric Iterators](#combinatoric-iterators)
-    - [Product](#product)
+    - [oroduct](#product)
 - [Iterator Usage](#iterator-usage)
-  - [Next](#next)
+  - [next](#next)
   - [For Loop](#for-loop)
   - [List](#list)
-  - [Zip](#zip)
-  - [Map](#map)
+  - [zip](#zip)
+  - [map](#map)
   - [Built-In Functions](#built-in-functions)
 - [Common Usages](#common-usages)
 
@@ -29,7 +29,7 @@ Functions creating iterators for efficient looping
 ### Infinite Iterators
 
 [🔼](#itertools-documentation)
-#### Count
+#### count
 
 ```python
 iterator = itertools.count(start = 0, step = 1)
@@ -53,7 +53,7 @@ Example:
 ```
 
 [🔼](#itertools-documentation)
-#### Cycle
+#### cycle
 
 ```python
 iterator = itertools.cycle(iterable)
@@ -67,7 +67,7 @@ When the iterable is exhausted, return elements from the saved copy. Repeats ind
 ```
 
 [🔼](#itertools-documentation)
-#### Repeat
+#### repeat
 
 ```python
 iterator = itertools.repeat(object, times=None)
@@ -86,7 +86,7 @@ Makes an iterator that returns the same object infinite times, unless set.
 ### Terminating Iterators
 
 [🔼](#itertools-documentation)
-#### Accumulate
+#### accumulate
 
 ```python
 iterator = itertools.accumulate(iterable, func = sum, initial = None)
@@ -119,7 +119,7 @@ Examples
 ```
 
 [🔼](#itertools-documentation)
-#### Batched
+#### batched
 
 ```python
 iterator = itertools.batched(iterable, n, strict=false)
@@ -133,7 +133,7 @@ Batch data from the iterable into tuples of length n. The last batch may be shor
 ```
 
 [🔼](#itertools-documentation)
-#### Chain
+#### chain
 
 ```python
 iterator = itertools.chain(*iterables)
@@ -150,7 +150,7 @@ Make an iterator that returns elements from the first iterable until it is exhau
 ### Combinatoric Iterators
 
 [🔼](#itertools-documentation)
-#### Product
+#### product
 
 ```python
 iterator = itertools.product(*iterables, repeat=1)
@@ -174,7 +174,7 @@ Example:
 ## Iterator Usage
 
 [🔼](#itertools-documentation)
-#### Next
+#### next
 
 ```python
 >>> itr = iter([10, 20, 30])
@@ -211,7 +211,7 @@ for number in my_iterator:
 ```
 
 [🔼](#itertools-documentation)
-#### Zip
+#### zip
 
 ```python
 iterator = zip(*iterator)
@@ -227,7 +227,7 @@ If the passed iterables have different lengths, the iterable with the least item
 ```
 
 [🔼](#itertools-documentation)
-#### Map
+#### map
 
 ```python
 iterator = map(function, *iterator)
