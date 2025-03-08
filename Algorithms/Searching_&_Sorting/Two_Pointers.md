@@ -1,5 +1,7 @@
+# Two Pointers
 [⬅](../../README.md)
-# Reverse Postions in a list
+
+## Reverse Postions in a list
 ```python
 def reverse_specific_characters(s: str) -> str:
 	word = list(s)
